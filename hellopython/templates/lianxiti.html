@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/icon" href="./static/python_logo.png">
+    <title>HelloPython 课件</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="navbar-fixed-top.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+    <style>
+/* Custom Styles */
+    ul.nav-tabs{
+        width: 240px;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    }
+    ul.nav-tabs li{
+        margin: 0;
+        border-top: 1px solid #ddd;
+    }
+    ul.nav-tabs li:first-child{
+        border-top: none;
+    }
+    ul.nav-tabs li a{
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 0;
+    }
+    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+        color: #fff;
+        background: #0088cc;
+        border: 1px solid #0088cc;
+    }
+    ul.nav-tabs li:first-child a{
+        border-radius: 4px 4px 0 0;
+    }
+    ul.nav-tabs li:last-child a{
+        border-radius: 0 0 4px 4px;
+    }
+     ul.nav-tabs.affix{
+        top: 30px; /* Set the top position of pinned element */
+    }
+    </style>
+
+  </head>
+
+  <body data-spy="scroll" data-target="#myScrollspy">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Hello Python</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav ">
+                   <li><a href="{{ url_for('index') }}">主页</a></li>
+               <li><a herf ="{{ url_for('kejian') }}">Python课件</a></li>
+              <li class ='active'><a herf='#'>Python练习题</a></li>
+                <li><a>Python各类资源</a></li>
+                <li><a>Python竞赛资讯</a></li>
+                <li><a href="{{ url_for('guanyu') }}">关于</a></li>
+
+
+
+
+
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h2>教学课件</h2>
+        <p style ='margin-top: 30px;'>主要内容包括计算机和程序设计语言概要，Python基本的数据类型（数字类型、序列类型、组合类型）</p>
+        <p>Python程序控制结构，Python基本图形绘制，Python函数定义与理解，Python代码复用和模块化设计</p>
+        <p>Python文件的操作和使用，Python一维和二维数据格式化，Python计算生态库的应用实例。</p>
+      </div>
+
+    </div> <!-- /container -->
+    <div class ='container'>
+
+      <div class = 'row' >
+        <div class="col-xs-3" id="myScrollspy">
+          <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">第1章 计算机和程序设计语言<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section-1">1.1 计算机概要</a></li>
+                        <li><a href="#section-2">1.2 程序设计和IPO</a></li>
+                        <li><a href="#section-3">1.3 编程语言的分类</a></li>
+                        <li><a href="#section-4">1.4 Python程序设计实践</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">第2章 Python基础语法元素<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section-5">2.1 实例“温度转换“问题分析”</a></li>
+                        <li><a href="#section-6">2.2 实例“温度转换“实例编写”</a></li>
+                        <li><a href="#section-7">2.3 实例“温度转换“语法元素分析</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">第3章 Python基础数据类型<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section-8">3.1 数字类型（整型、浮点型、复数类型）</a></li>
+                        <li><a href="#section-9">3.2 序列类型（字符串、列表、元组）</a></li>
+                        <li><a href="#section-10">3.3 组合类型（集合、字典）</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">第4章 Python程序的控制结构<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section-11">4.1 程序分支结构</a></li>
+                        <li><a href="#section-12">4.2 程序循环结构</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">第5章 Import和库的操作和使用<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section-13">5.1 库引用import的使用方法</a></li>
+                        <li><a href="#section-14">5.2 time库基本介绍</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">第6章 函数的定义和使用<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section-15">6.1 函数的理解和定义</a></li>
+                        <li><a href="#section-16">6.2 函数的使用及调用过程</a></li>
+                        <li><a href="#section-17">6.3 局部变量和全局变量</a></li>
+                        <li><a href="#section-18">6.4 lambda函数</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">第7章 函数递归和代码复用<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section-19">7.1 代码复用与模块化设计</a></li>
+                        <li><a href="#section-20">7.2 函数递归的理解</a></li>
+                        <li><a href="#section-21">7.3 函数递归的调用过程</a></li>
+                        <li><a href="#section-22">7.4 函数递归实例解析</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">第8章 Python基本图形绘制<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section-23">8.1 turtle库基本介绍</a></li>
+                        <li><a href="#section-24">8.2 实例：Python蟒蛇绘制</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">第9章 文件和数据格式化<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section-25">9.1 前课复习</a></li>
+                        <li><a href="#section-26">9.2 文件的使用</a></li>
+                        <li><a href="#section-27">9.3 实例：自动轨迹绘制</a></li>
+                        <li><a href="#section-28">9.4 一维数据的格式化与处理</a></li>
+                        <li><a href="#section-29">9.5 二维数据的格式化与处理</a></li>
+                    </ul>
+                </li>
+
+
+
+
+            </ul>
+        </div>
+        <div class="col-xs-9">
+            <h1>第1章 计算机和程序设计语言</h1>
+            <h2 id="section-1">1.1 计算机概要</h2>    
+            <iframe src='static/kejian/1.1计算机概要.pdf' width='100%' height='510px' frameborder='3'></iframe>    
+            <h2 id="section-2">1.2 程序设计和IPO</h2>       
+            <iframe src='static/kejian/1.2程序设计和IPO.pdf' width='100%' height='510px' frameborder='3'></iframe>
+            <h2 id="section-3">1.3 编程语言的分类</h2>    
+            <iframe src='static/kejian/1.3编程语言的分类.pdf' width='100%' height='510px' frameborder='3'></iframe>    
+            <h2 id="section-4">1.4 Python程序设计实践</h2>       
+            <iframe src='static/kejian/1.4Python程序设计实践.pdf' width='100%' height='510px' frameborder='3'></iframe>   
+            <h1>第2章 Python基础语法元素</h1>        
+            <h2 id="section-5"> 2.1 实例“温度转换“问题分析”</h2>    
+            <iframe src='static/kejian/2.1实例“温度转换“问题分析”.pdf' width='100%' height='510px' frameborder='3'></iframe>    
+            <h2 id="section-6">2.2 实例“温度转换“实例编写”</h2>       
+            <iframe src='static/kejian/2.2实例“温度转换“实例编写”.pdf' width='100%' height='510px' frameborder='3'></iframe>
+            <h2 id="section-7">2.3 实例“温度转换“语法元素分析</h2>
+            <iframe src='static/kejian/2.3实例“温度转换“语法元素分析.pdf' width='100%' height='510px' frameborder='3'></iframe>
+            <h1>第3章 Python基础数据类型</h1>   
+            <h2 id="section-8">3.1 数字类型（整型、浮点型、复数类型）</h2>       
+            <iframe src='static/kejian/3.1数字类型（整型、浮点型、复数类型）.pdf' width='100%' height='510px' frameborder='3'></iframe>           
+            <h2 id="section-9">3.2 序列类型（字符串、列表、元组）</h2>    
+            <iframe src='static/kejian/3.2 序列类型（字符串、列表、元组）.pdf' width='100%' height='510px' frameborder='3'></iframe>
+            <h2 id="section-10">3.3 组合类型（集合、字典）</h2>    
+            <iframe src='static/kejian/3.3 组合类型（集合、字典）.pdf' width='100%' height='510px' frameborder='3'></iframe>    
+            <h1>第4章 Python程序的控制结构</h1>
+            <h2 id="section-11">4.1 程序分支结构（二分支、多分支、条件判断与组合、程序异常处理）</h2>       
+            <iframe src='static/kejian/4.1 程序分支结构（二分支、多分支、条件判断与组合、程序异常处理）.pdf' width='100%' height='510px' frameborder='3'></iframe>
+            <h2 id="section-12">4.2 程序循环结构（遍历循环、无限循环、循环保留字、循环的高级用法）</h2>    
+            <iframe src='static/kejian/4.2 程序循环结构（遍历循环、无限循环、循环保留字、循环的高级用法）.pdf' width='100%' height='510px' frameborder='3'></iframe>    
+
+            <h1>第5章 Import和库的操作和使用</h1>    
+            <h2 id="section-13">5.1 库引用import的使用方法</h2>       
+            <iframe src='static/kejian/5.1 库引用import的使用方法.pdf' width='100%' height='510px' frameborder='3'></iframe>   
+    
+            <h2 id="section-14">5.2 time库基本介绍</h2>    
+            <iframe src='static/kejian/5.2 time库基本介绍.pdf' width='100%' height='510px' frameborder='3'></iframe>    
+            <h1>第6章 函数的定义和使用</h1>   
+
+            <h2 id="section-15">6.1 函数的理解和定义</h2>       
+            <iframe src='static/kejian/6.1 函数的理解和定义.pdf' width='100%' height='510px' frameborder='3'></iframe>
+            <h2 id="section-16">6.2 函数的使用及调用过程（函数的参数传递、函数的返回值)</h2>
+            <iframe src='static/kejian/6.2 函数的使用及调用过程（函数的参数传递、函数的返回值.pdf' width='100%' height='510px' frameborder='3'></iframe>
+     
+            <h2 id="section-17">6.3 局部变量和全局变量</h2>       
+            <iframe src='static/kejian/6.3 局部变量和全局变量.pdf' width='100%' height='510px' frameborder='3'></iframe>
+            <h2 id="section-18">6.4 lambda函数</h2>    
+            <iframe src='static/kejian/6.4 lambda函数.pdf' width='100%' height='510px' frameborder='3'></iframe>
+             <h1>第7章 函数递归和代码复用</h1>
+            <h2 id="section-19">7.1 代码复用与模块化设计</h2>    
+            <iframe src='static/kejian/7.1 代码复用与模块化设计.pdf' width='100%' height='510px' frameborder='3'></iframe>    
+            <h2 id="section-20">7.2 函数递归的理解</h2>       
+            <iframe src='static/kejian/7.2 函数递归的理解.pdf' width='100%' height='510px' frameborder='3'></iframe>
+            <h2 id="section-21">7.3 函数递归的调用过程</h2>    
+            <iframe src='static/kejian/7.3 函数递归的调用过程.pdf' width='100%' height='510px' frameborder='3'></iframe>    
+            <h2 id="section-22">7.4 函数递归实例解析（ 斐波那契数列、汉诺塔）</h2>       
+            <iframe src='static/kejian/7.4 函数递归实例解析（ 斐波那契数列、汉诺塔）.pdf' width='100%' height='510px' frameborder='3'></iframe>   
+            <h1>第8章 Python基本图形绘制</h1>        
+            <h2 id="section-23">8.1 turtle库基本介绍</h2>    
+            <iframe src='static/kejian/8.1 turtle库基本介绍.pdf' width='100%' height='510px' frameborder='3'></iframe>    
+            <h2 id="section-24">8.2 实例：Python蟒蛇绘制</h2>       
+            <iframe src='static/kejian/8.2 实例：Python蟒蛇绘制.pdf' width='100%' height='510px' frameborder='3'></iframe>
+            <h1>第9章 文件和数据格式化</h1> 
+            <h2 id="section-25">9.1 前课复习</h2>
+            <iframe src='static/kejian/9.1 前课复习.pdf' width='100%' height='510px' frameborder='3'></iframe>
+            <h2 id="section-26">9.2 文件的使用</h2>       
+            <iframe src='static/kejian/9.2 文件的使用.pdf' width='100%' height='510px' frameborder='3'></iframe>           
+            <h2 id="section-27">9.3 实例：自动轨迹绘制</h2>    
+            <iframe src='static/kejian/9.3 实例：自动轨迹绘制.pdf' width='100%' height='510px' frameborder='3'></iframe>            
+            <h2 id="section-28">9.4 一维数据的格式化与处理</h2>    
+            <iframe src='static/kejian/9.4 一维数据的格式化与处理.pdf' width='100%' height='510px' frameborder='3'></iframe>            
+            <h2 id="section-29">9.5 二维数据的格式化与处理</h2>    
+            <iframe src='static/kejian/9.5 二维数据的格式化与处理.pdf' width='100%' height='510px' frameborder='3'></iframe>
+          
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+        <footer class="text-center">
+        {% block footer %}
+        <p class="mu-copy-right">© Copyright <a rel="nofollow">2020-2025 王支勇</a>. All right reserved.</p>
+            </small>
+        {% endblock %}
+    </footer>
+  </body>
+</html>

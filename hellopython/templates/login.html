@@ -1,0 +1,51 @@
+{% from 'macros.html' import form_field %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Hello Python!{% endblock %}</title>
+    <link rel="shortcut icon" type="image/icon" href="./static/python_logo.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}" type="text/css">
+</head>
+<body>
+<main class="container">
+    <header>
+        <h1 class="text-center display-4">
+            <a href="{{ url_for('login') }}" class="text-success"><strong>Hello Python</strong></a>
+        </h1>
+    </header>
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-info">
+
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="hello-form">
+        <form method="post" action="{{ request.full_path }}">
+            {{ form.csrf_token }}
+            <div class="form-group required">
+                {{ form_field(form.username, class='form-control') }}
+            </div>
+            <div class="form-group required">
+                {{ form_field(form.password, class='form-control') }}
+            </div>
+            {{ form.login(class='btn btn-secondary') }}
+        </form>
+    </div>
+
+
+
+
+
+    <footer class="text-center">
+        {% block footer %}
+        <p class="mu-copy-right">© Copyright <a rel="nofollow">2020-2025 王支勇</a>. All right reserved.</p>
+            </small>
+        {% endblock %}
+    </footer>
+</main>
+</body>
+</html>
